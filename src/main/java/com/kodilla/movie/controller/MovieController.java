@@ -21,7 +21,7 @@ public class MovieController {
     }
 
     @GetMapping("/{movieId}")
-    public Movie findMovie(@PathVariable Long movieId) {
+    public Movie findMovie(@PathVariable Long movieId) throws MovieNotFoundException {
         return movieService.findMovieById(movieId);
     }
 
@@ -31,7 +31,7 @@ public class MovieController {
     }
 
     @DeleteMapping("/{movieId}")
-    public void deleteBook(@PathVariable Long movieId) {
+    public void deleteMovie(@PathVariable Long movieId) {
         movieService.deleteMovie(movieId);
     }
 
